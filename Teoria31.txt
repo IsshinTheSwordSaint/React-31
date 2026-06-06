@@ -1,0 +1,7 @@
+System routing oparty na plikach (file-based routing) polega na tym, że struktura adresów URL Twojej aplikacji jest automatycznie generowana na podstawie fizycznej struktury folderów i plików wewnątrz katalogu app/. Nie musisz ręcznie konfigurować żadnego zewnętrznego routera (np. React Router) w kodzie.
+
+Każdy zagnieżdżony folder wewnątrz katalogu app/ staje się bezpośrednio segmentem ścieżki w adresie URL (np. folder app/dashboard odpowiada adresowi strona.pl/dashboard). Foldery służą wyłącznie do definiowania ścieżek dostępu.
+
+Sam folder nie wystarczy, aby strona działała – potrzebuje punktu wejścia. Mapowanie na URL dopełnia plik o specjalnej, zarezerwowanej nazwie page.tsx. Dopiero obecność tego pliku w danym folderze sprawia, że ścieżka staje się publicznie dostępna w przeglądarce i renderuje zdefiniowany w nim komponent.
+
+Przykładowo, plik app/page.tsx mapuje się na główną stronę główną (/). Plik app/settings/page.tsx zostanie zmapowany na adres /settings, a bardziej zagnieżdżona struktura typu app/blog/posts/page.tsx automatycznie obsłuży adres URL /blog/posts.
